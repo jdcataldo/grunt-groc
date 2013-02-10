@@ -1,0 +1,41 @@
+{
+  "name": "grunt-groc",
+  "description": "Generate documentation using groc",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jdcataldo/grunt-groc",
+  "author": {
+    "name": "Justin Cataldo",
+    "url": "http://github.com/jdcataldo/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jdcataldo/grunt-groc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jdcataldo/grunt-groc/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jdcataldo/grunt-groc/blob/master/MIT-LICENSE.txt"
+    }
+  ],
+  "scripts": {
+    "test": "grunt test"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+    "groc": "~0.3.2"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0rc7",
+    "grunt-contrib-jshint": "~0.1.1rc6"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "readmeFilename": "README.md",
+  "gitHead": "8371c0a4892fcfa85c7ef50638559f0f3c75b0f8"
+}
