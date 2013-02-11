@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       options: {
         jshintrc: '.jshintrc',
       }
-    },
+    }
   });
 
   // Load he plugin task
