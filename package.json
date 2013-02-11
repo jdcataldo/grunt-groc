@@ -1,7 +1,7 @@
 {
   "name": "grunt-groc",
   "description": "Generate documentation using groc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/jdcataldo/grunt-groc",
   "author": {
     "name": "Justin Cataldo",
@@ -20,9 +20,6 @@
       "url": "https://github.com/jdcataldo/grunt-groc/blob/master/MIT-LICENSE.txt"
     }
   ],
-  "scripts": {
-    "test": "grunt test"
-  },
   "engines": {
     "node": ">= 0.8.0"
   },

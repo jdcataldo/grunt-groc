@@ -34,7 +34,13 @@ module.exports = function(grunt) {
       });
 
       // Pass the args to groc
-      groc(_.flatten(args), function(){
+      groc(_.flatten(args), function(error){
+        if(error) {
+          grunt.warn(error);
+          process.exit(1);
+          done(false);
+          return;
+        }
         done();
       });
     });
