@@ -31,7 +31,7 @@
     "grunt-contrib-jshint": "~0.1.1"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin", "groc", "documentation"
   ],
   "readmeFilename": "README.md",
   "gitHead": "8371c0a4892fcfa85c7ef50638559f0f3c75b0f8"
