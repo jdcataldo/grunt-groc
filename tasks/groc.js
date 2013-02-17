@@ -10,14 +10,14 @@
 
 module.exports = function(grunt) {
   var groc = require("groc").CLI,
-      util    = grunt.util || grunt.utils,
+      util    = grunt.util,
       // Alias for Lo-Dash
       _       = util._;
 
   grunt.registerMultiTask('groc', 'Generate documenation using groc', function() {
     // Merge options
-    var options = this.options ? this.options() : this.data.options,
-        files   = this.filesSrc || this.data.src,
+    var options = this.options(),
+        files   = this.filesSrc,
         // Set task as async
         done    = this.async(),
         // Array of arguments to pass into groc
