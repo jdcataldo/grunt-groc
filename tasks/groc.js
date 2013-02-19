@@ -30,7 +30,14 @@ module.exports = function(grunt) {
       // Convert to the key to a switch
       var sw = (key.length > 1 ? '--' : '-') + key;
       // Add the switch and its value
-      args.push([sw, value.toString()]);
+      // If the value is an array, add all array elements to the array.
+      if(!_.isArray(value)) {
+        value = [value];
+      }
+      
+      _.each(value, function(value) {
+        args.push([sw, value.toString()]);
+      });
     });
 
     // Pass the args to groc
