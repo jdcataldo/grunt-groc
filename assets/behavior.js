@@ -13,7 +13,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "commentsOnly": true,
           "name": "Markdown"
         },
-        "sourcePath": "/Users/justin/repos/grunt-groc/README.md",
+        "sourcePath": "/Users/jdcataldo/repos/grunt-groc/README.md",
         "projectPath": "README.md",
         "targetPath": "index",
         "firstHeader": {
@@ -68,7 +68,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "singleLineComment": ["//"],
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/justin/repos/grunt-groc/tasks/groc.js",
+            "sourcePath": "/Users/jdcataldo/repos/grunt-groc/tasks/groc.js",
             "projectPath": "tasks/groc.js",
             "targetPath": "tasks/groc",
             "title": "groc"
