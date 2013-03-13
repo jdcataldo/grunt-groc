@@ -1,7 +1,7 @@
 {
   "name": "grunt-groc",
   "description": "Generate documentation using groc",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/jdcataldo/grunt-groc",
   "author": {
     "name": "Justin Cataldo",
@@ -34,7 +34,9 @@
     "grunt": "~0.4.0"
   },
   "keywords": [
-    "gruntplugin", "groc", "documentation"
+    "gruntplugin",
+    "groc",
+    "documentation"
   ],
   "readmeFilename": "README.md",
   "gitHead": "8371c0a4892fcfa85c7ef50638559f0f3c75b0f8"
