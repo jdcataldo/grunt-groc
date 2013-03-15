@@ -9,7 +9,8 @@ module.exports = function(grunt) {
         "tasks/*.js", "README.md"
       ],
       options: {
-        "github": true
+        "github": true,
+        "whitespace-after-token": false
       }
     },
     jshint: {
