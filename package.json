@@ -24,11 +24,11 @@
     "node": ">= 0.8.0"
   },
   "dependencies": {
-    "groc": "~0.4.0"
+    "groc": "~0.6.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.0",
-    "grunt-contrib-jshint": "~0.1.1"
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.4"
   },
   "peerDependencies": {
     "grunt": "~0.4.0"

@@ -1,9 +1,9 @@
 /*
- * grunt-groc
- * https://github.com/jdcataldo/grunt-groc
+ * grunt-groc  
+ * https://github.com/jdcataldo/grunt-groc  
  *
- * Copyright (c) 2013 Justin Cataldo
- * Licensed under the MIT license.
+ * Copyright (c) 2013 Justin Cataldo  
+ * Licensed under the MIT license.  
  */
 
 'use strict';
