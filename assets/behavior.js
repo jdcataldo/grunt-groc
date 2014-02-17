@@ -9,13 +9,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
       "type": "file",
       "data": {
         "language": {
-          "nameMatchers": [".md"],
+          "nameMatchers": [".md", ".markdown", ".mkd", ".mkdn", ".mdown"],
           "commentsOnly": true,
           "name": "Markdown"
         },
         "sourcePath": "/Users/jdcataldo/repos/grunt-groc/README.md",
         "projectPath": "README.md",
         "targetPath": "index",
+        "pageTitle": "index",
         "firstHeader": {
           "type": "heading",
           "data": {
@@ -65,12 +66,16 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "language": {
               "nameMatchers": [".js"],
               "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
               "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
               "name": "JavaScript"
             },
             "sourcePath": "/Users/jdcataldo/repos/grunt-groc/tasks/groc.js",
             "projectPath": "tasks/groc.js",
             "targetPath": "tasks/groc",
+            "pageTitle": "tasks/groc",
             "title": "groc"
           },
           "depth": 2,
@@ -86,7 +91,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 
   setTableOfContentsActive = function(active) {
     var html$;
-
     html$ = $('html');
     if (active) {
       nav$.addClass('active');
@@ -105,7 +109,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 
   focusCurrentNode = function() {
     var currentNodeBottom, currentNodeTop;
-
     currentNodeTop = currentNode$.offset().top - toc$.children(':visible').first().offset().top;
     currentNodeBottom = currentNodeTop + currentNode$.children('.label').height();
     if (currentNodeTop < toc$.scrollTop()) {
@@ -118,7 +121,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 
   setCurrentNodeExpanded = function(expanded) {
     var parents$;
-
     if (expanded) {
       currentNode$.addClass('expanded');
     } else {
@@ -143,7 +145,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 
   selectNodeByDocumentPath = function(documentPath, headerSlug) {
     var link, urlChunks, _i, _len, _ref;
-
     if (headerSlug == null) {
       headerSlug = null;
     }
@@ -166,7 +167,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 
   moveCurrentNode = function(up) {
     var i, newIndex, node, visibleNodes$, _i, _len;
-
     visibleNodes$ = toc$.find('li:visible:not(.filtered)');
     newIndex = 0;
     for (i = _i = 0, _len = visibleNodes$.length; _i < _len; i = ++_i) {
@@ -187,7 +187,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 
   visitCurrentNode = function() {
     var labelLink$;
-
     labelLink$ = currentNode$.children('a.label');
     if (labelLink$.length > 0) {
       return window.location = labelLink$.attr('href');
@@ -200,7 +199,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 
   appendSearchNode = function(node$) {
     var text$;
-
     text$ = node$.find('> .label .text');
     return searchableNodes.push([text$.text().toLowerCase(), node$, text$]);
   };
@@ -209,7 +207,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 
   searchNodes = function(queryString) {
     var c, filtered, matched, matcher, nodeInfo, p, _i, _j, _k, _len, _len1, _len2, _results;
-
     queryString = queryString.toLowerCase().replace(/\s+/, '');
     if (queryString === currentQuery) {
       return;
@@ -220,7 +217,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
     }
     matcher = new RegExp(((function() {
       var _i, _len, _results;
-
       _results = [];
       for (_i = 0, _len = queryString.length; _i < _len; _i++) {
         c = queryString[_i];
@@ -256,7 +252,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
       highlightMatch(nodeInfo[2], queryString);
       _results.push((function() {
         var _l, _len3, _ref, _results1;
-
         _ref = nodeInfo[1].parents('li');
         _results1 = [];
         for (_l = 0, _len3 = _ref.length; _l < _len3; _l++) {
@@ -271,7 +266,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 
   clearFilter = function() {
     var nodeInfo, _i, _len, _results;
-
     nav$.removeClass('searching');
     currentQuery = '';
     _results = [];
@@ -285,7 +279,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 
   highlightMatch = function(text$, queryString) {
     var char, foundIndex, furthestIndex, lowerText, markedText, nodeText, _i, _len;
-
     nodeText = text$.text();
     lowerText = nodeText.toLowerCase();
     markedText = '';
@@ -307,7 +300,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 
   buildNav = function(metaInfo) {
     var node, sourceURL, _i, _len;
-
     nav$ = $("<nav>\n  <ul class=\"tools\">\n    <li class=\"toggle\">Table of Contents</li>\n    <li class=\"search\">\n      <input id=\"search\" type=\"search\" autocomplete=\"off\"/>\n    </li>\n  </ul>\n  <ol class=\"toc\"/>\n  </div>\n</nav>").appendTo($('body'));
     toc$ = nav$.find('.toc');
     if (metaInfo.githubURL) {
@@ -326,15 +318,29 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
   };
 
   buildTOCNode = function(node, metaInfo) {
-    var c, children$, discloser$, label$, node$, _i, _len, _ref, _ref1, _ref2;
-
+    var c, children$, clickLabel, discloser, discloser$, label$, node$, _i, _len, _ref, _ref1, _ref2;
     node$ = $("<li class=\"" + node.type + "\"/>");
+    discloser = null;
     switch (node.type) {
       case 'file':
         node$.append("<a class=\"label\" href=\"" + metaInfo.relativeRoot + node.data.targetPath + ".html\" title=\"" + node.data.projectPath + "\"><span class=\"text\">" + node.data.title + "</span></a>");
+        clickLabel = function(evt) {
+          if (evt.target === discloser) {
+            node$.toggleClass('expanded');
+            evt.preventDefault();
+            return false;
+          }
+          return selectNode(node$);
+        };
         break;
       case 'folder':
-        node$.append("<span class=\"label\"><span class=\"text\">" + node.data.title + "</span></span>");
+        node$.append("<a class=\"label\" href=\"#\"><span class=\"text\">" + node.data.title + "</span></a>");
+        clickLabel = function(evt) {
+          selectNode(node$);
+          node$.toggleClass('expanded');
+          evt.preventDefault();
+          return false;
+        };
     }
     if (((_ref = node.children) != null ? _ref.length : void 0) > 0) {
       children$ = $('<ol class="children"/>');
@@ -346,17 +352,12 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
       node$.append(children$);
     }
     label$ = node$.find('> .label');
-    label$.click(function() {
-      return selectNode(node$);
-    });
+    label$.click(clickLabel);
     discloser$ = $('<span class="discloser"/>').prependTo(label$);
     if (!(((_ref2 = node.children) != null ? _ref2.length : void 0) > 0)) {
       discloser$.addClass('placeholder');
     }
-    discloser$.click(function(evt) {
-      node$.toggleClass('expanded');
-      return evt.preventDefault();
-    });
+    discloser = discloser$.get(0);
     if (node.type === 'file') {
       fileMap[node.data.targetPath] = node$;
     }
@@ -366,7 +367,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 
   $(function() {
     var lastMousedownTimestamp, metaInfo, search$, toggle$;
-
     metaInfo = {
       relativeRoot: $('meta[name="groc-relative-root"]').attr('content'),
       githubURL: $('meta[name="groc-github-url"]').attr('content'),
@@ -432,7 +432,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
     search$.bind('keyup search', function(evt) {
       return searchNodes(search$.val());
     });
-    return search$.keydown(function(evt) {
+    search$.keydown(function(evt) {
       if (evt.keyCode === 27) {
         if (search$.val().trim() === '') {
           return search$.blur();
@@ -440,6 +440,15 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           return search$.val('');
         }
       }
+    });
+    return $('.code.folded').each(function(index, code) {
+      var code$;
+      code$ = $(code);
+      return code$.click(function(evt) {
+        code$.toggleClass('folded');
+        evt.preventDefault();
+        return false;
+      });
     });
   });
 
