@@ -20,6 +20,9 @@
       "url": "https://github.com/jdcataldo/grunt-groc/blob/master/MIT-LICENSE.txt"
     }
   ],
+  "scripts": {
+    "test": "grunt"
+  },
   "engines": {
     "node": ">= 0.8.0"
   },
