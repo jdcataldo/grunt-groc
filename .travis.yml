@@ -4,6 +4,8 @@ node_js:
 before_script: 
 - sudo pip install Pygments
 - npm install -g grunt-cli
+- git config --global user.email "travis@travis-ci.org"
+- git config --global user.name "travis-ci"
 language: node_js
 env: 
   global: 
