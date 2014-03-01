@@ -7,10 +7,7 @@ module.exports = function(grunt) {
     groc: {
       javascript: [
         "tasks/*.js", "README.md"
-      ],
-      options: {
-        "github": true
-      }
+      ]
     },
     jshint: {
       all_files: [
