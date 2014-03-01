@@ -1,7 +1,7 @@
 {
   "name": "grunt-groc",
   "description": "Generate documentation using groc",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "homepage": "https://github.com/jdcataldo/grunt-groc",
   "author": {
     "name": "Justin Cataldo",
@@ -24,10 +24,10 @@
     "node": ">= 0.8.0"
   },
   "dependencies": {
-    "groc": "~0.6.3"
+    "groc": "~0.6.3",
+    "lodash": "^2.4.1"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.4"
   },
   "peerDependencies": {

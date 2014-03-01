@@ -9,10 +9,8 @@
 'use strict';
 
 module.exports = function(grunt) {
-  var groc = require("groc").CLI,
-      util    = grunt.util,
-      // Alias for Lo-Dash
-      _       = util._;
+  var groc = require('groc').CLI,
+      _    = require('lodash');
 
   grunt.registerMultiTask('groc', 'Generate documenation using groc', function() {
     // Merge options
@@ -27,7 +25,7 @@ module.exports = function(grunt) {
     args.push(files);
     // Loop through the options and add them to args
     _.each(options, function(value, key) {
-      // Convert to the key to a switch
+      // Convert the key to a switch
       var sw = (key.length > 1 ? '--' : '-') + key;
       // Add the switch and its value
       // If the value is an array, add all array elements to the array.
