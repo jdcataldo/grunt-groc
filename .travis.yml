@@ -1,7 +1,10 @@
+node_js: 
+- "0.10"
+- "0.8"
+before_script: 
+- sudo pip install Pygments
+- npm install -g grunt-cli
 language: node_js
-node_js:
-  - "0.10"
-  - "0.8"
-before_script:
-  - sudo pip install Pygments
-  - npm install -g grunt-cli
+env: 
+  global: 
+    secure: mjp1houEuZYeIRMxaF0LZfEw+6bVzjuDa0hL2y/dFSkOT3dLwNOMpRRAEXEqwOwK2MVGd5aqVzGUN6HCwSFvmDWlxjy5LbbeOOMGcWC0wg+HqAyS1TwUMbwQ0zxiCI29OlkNfbPZuD8bXoKQnm9GLGlv1x5/83VXttcegI0ULm8=
