@@ -5,8 +5,6 @@ grunt-groc
 
 [![Build Status](https://travis-ci.org/jdcataldo/grunt-groc.png?branch=master)](https://travis-ci.org/jdcataldo/grunt-groc)
 
-Groc depends on [Pygments](http://pygments.org/) to generate documentation. Follow the installation instructions [here](http://pygments.org/download/).
-
 
 ### Usage
 Install this plugin with the following command:
