@@ -3,7 +3,8 @@ grunt-groc
 
 > A simple grunt task to generate a project's documentation using [Groc](http://nevir.github.com/groc/)
 
-[![Build Status](https://travis-ci.org/jdcataldo/grunt-groc.png?branch=master)](https://travis-ci.org/jdcataldo/grunt-groc)
+[![Travis branch](https://img.shields.io/travis/joyent/node/v0.6.svg)](https://travis-ci.org/jdcataldo/grunt-groc)
+[![npm](https://img.shields.io/npm/dm/localeval.svg)](https://www.npmjs.com/package/grunt-groc)
 
 
 ### Usage
