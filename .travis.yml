@@ -1,11 +1,12 @@
-node_js: 
-- "0.10"
-before_script: 
+node_js:
+- "4"
+- "5"
+before_script:
 - sudo pip install Pygments
 - npm install -g grunt-cli
 - git config --global user.email "travis@travis-ci.org"
 - git config --global user.name "travis-ci"
 language: node_js
-env: 
-  global: 
+env:
+  global:
     secure: mjp1houEuZYeIRMxaF0LZfEw+6bVzjuDa0hL2y/dFSkOT3dLwNOMpRRAEXEqwOwK2MVGd5aqVzGUN6HCwSFvmDWlxjy5LbbeOOMGcWC0wg+HqAyS1TwUMbwQ0zxiCI29OlkNfbPZuD8bXoKQnm9GLGlv1x5/83VXttcegI0ULm8=
