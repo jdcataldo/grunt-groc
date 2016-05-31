@@ -31,7 +31,8 @@
     "lodash": "~2.4.0"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.6.4"
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
