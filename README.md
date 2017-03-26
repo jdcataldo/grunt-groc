@@ -1,6 +1,8 @@
 grunt-groc
 ================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jdcataldo/grunt-groc.svg)](https://greenkeeper.io/)
+
 > A simple grunt task to generate a project's documentation using [Groc](http://nevir.github.com/groc/)
 
 [![Build Status](https://travis-ci.org/jdcataldo/grunt-groc.svg?branch=master)](https://travis-ci.org/jdcataldo/grunt-groc)
