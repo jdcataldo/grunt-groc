@@ -21,14 +21,17 @@
     }
   ],
   "scripts": {
-    "test": "grunt"
+    "test": "grunt",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": ">= 0.10.0"
   },
   "dependencies": {
     "groc": "^0.8.0",
-    "lodash": "~2.4.0"
+    "lodash": "~2.4.0",
+    "snyk": "^1.36.2"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
@@ -43,5 +46,6 @@
     "documentation"
   ],
   "readmeFilename": "README.md",
-  "gitHead": "8371c0a4892fcfa85c7ef50638559f0f3c75b0f8"
+  "gitHead": "8371c0a4892fcfa85c7ef50638559f0f3c75b0f8",
+  "snyk": true
 }
