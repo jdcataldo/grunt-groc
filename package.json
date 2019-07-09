@@ -31,7 +31,7 @@
   "dependencies": {
     "groc": "^0.8.0",
     "lodash": "~2.4.0",
-    "snyk": "^1.36.2"
+    "snyk": "^1.192.4"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
